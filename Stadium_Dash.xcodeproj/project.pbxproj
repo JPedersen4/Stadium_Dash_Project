@@ -16,6 +16,9 @@
 		690CCAAB29F9A20D007625AD /* Stadium_DashTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690CCAAA29F9A20D007625AD /* Stadium_DashTests.swift */; };
 		690CCAB529F9A20D007625AD /* Stadium_DashUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690CCAB429F9A20D007625AD /* Stadium_DashUITests.swift */; };
 		690CCAB729F9A20D007625AD /* Stadium_DashUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690CCAB629F9A20D007625AD /* Stadium_DashUITestsLaunchTests.swift */; };
+		694FB4F72A0C194E00864A79 /* CheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694FB4F62A0C194E00864A79 /* CheckoutViewController.swift */; };
+		694FB4F92A0C196000864A79 /* StadiumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694FB4F82A0C196000864A79 /* StadiumViewController.swift */; };
+		694FB4FB2A0C196E00864A79 /* VendorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694FB4FA2A0C196E00864A79 /* VendorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		690CCAB029F9A20D007625AD /* Stadium_DashUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Stadium_DashUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		690CCAB429F9A20D007625AD /* Stadium_DashUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stadium_DashUITests.swift; sourceTree = "<group>"; };
 		690CCAB629F9A20D007625AD /* Stadium_DashUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stadium_DashUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		694FB4F62A0C194E00864A79 /* CheckoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewController.swift; sourceTree = "<group>"; };
+		694FB4F82A0C196000864A79 /* StadiumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StadiumViewController.swift; sourceTree = "<group>"; };
+		694FB4FA2A0C196E00864A79 /* VendorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +109,9 @@
 				690CCA9529F9A20C007625AD /* SceneDelegate.swift */,
 				690CCA9729F9A20C007625AD /* ViewController.swift */,
 				690CCA9929F9A20C007625AD /* Main.storyboard */,
+				694FB4F62A0C194E00864A79 /* CheckoutViewController.swift */,
+				694FB4F82A0C196000864A79 /* StadiumViewController.swift */,
+				694FB4FA2A0C196E00864A79 /* VendorViewController.swift */,
 				690CCA9C29F9A20D007625AD /* Assets.xcassets */,
 				690CCA9E29F9A20D007625AD /* LaunchScreen.storyboard */,
 				690CCAA129F9A20D007625AD /* Info.plist */,
@@ -258,9 +267,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				694FB4FB2A0C196E00864A79 /* VendorViewController.swift in Sources */,
+				694FB4F72A0C194E00864A79 /* CheckoutViewController.swift in Sources */,
 				690CCA9829F9A20C007625AD /* ViewController.swift in Sources */,
 				690CCA9429F9A20C007625AD /* AppDelegate.swift in Sources */,
 				690CCA9629F9A20C007625AD /* SceneDelegate.swift in Sources */,
+				694FB4F92A0C196000864A79 /* StadiumViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
