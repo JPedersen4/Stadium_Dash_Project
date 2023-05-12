@@ -9,6 +9,11 @@ import UIKit
 
 class VendorViewController: UIViewController {
     
+    var order: CurrentOrder = CurrentOrder(total: 0, chiliDog: 0, chicDog: 0, hotDog: 0, nacho: 0, nachoChili: 0, nachoChix: 0)
+    
+
+
+    
     var chiliDogTotal: Int = 0
     var chiliDogPrice: Int = 3
     var hotDogTotal: Int = 0
@@ -30,23 +35,52 @@ class VendorViewController: UIViewController {
 
     @IBOutlet weak var checkoutButton: UIButton!
     
+    @IBAction func vendorSwitchPressed(_ sender: UISwitch) {
+        switch sender{
+        case hotDawgzSwitch:
+            if hotDawgzSwitch.isOn{
+                nachoStackView.isHidden = true
+                hotDawgStackView.isHidden = false
+                nachoSwitch.isEnabled = false
+                updateUI()
+            }
+            else{
+                hotDawgStackView.isHidden = true
+                nachoSwitch.isEnabled = true
+                updateUI()
+            }
+        case nachoSwitch:
+            if nachoSwitch.isOn{
+                hotDawgStackView.isHidden = true
+                nachoStackView.isHidden = false
+                hotDawgzSwitch.isEnabled = false
+                updateUI()
+            }
+            else{
+                nachoStackView.isHidden = true
+                hotDawgzSwitch.isEnabled = true
+                updateUI()
+            }
+        default:
+            break
+        }
+    }
+    @IBOutlet weak var nachoSwitch: UISwitch!
+    @IBOutlet weak var hotDawgzSwitch: UISwitch!
     @IBOutlet weak var vendorList: UIButton!
     
     @IBOutlet weak var totalCostLabel: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
     
-    @IBOutlet weak var vendorButtonMenu: UIMenu!
+    @IBOutlet weak var nachoStackView: UIStackView!
     @IBAction func checkoutButtonPressed(_ sender: UIButton) {
         if totalCost > 0{
             performSegue(withIdentifier: "CheckoutViewController", sender: totalCost)
         }
     }
     
-    @IBAction func vendorButtonPressed(_ sender: Any) {
-        if vendorButtonMenu.
-    }
-    @IBOutlet weak var nachoToYaVendor: UICommand!
-    @IBOutlet weak var hotDawgzVendor: UICommand!
+
+    @IBOutlet weak var hotDawgStackView: UIStackView!
     @IBOutlet weak var hotDogTotalLabel: UILabel!
     @IBOutlet weak var hotDogDeleteBtn: UIButton!
     @IBOutlet weak var hotDogAddBtn: UIButton!
@@ -129,19 +163,33 @@ class VendorViewController: UIViewController {
     @IBOutlet weak var nachoLabel: UILabel!
     
     func updateUI() {
-        chiliTotalLabel.text = "\(chiliDogTotal)"
-        chicagoTotalLabel.text = "\(chicagoDogTotal)"
-        nachoTotalLabel.text = "\(nachoTotal)"
-        nachoChixTotalLabel.text = "\(nachoChixTotal)"
-        nachoChiliTotalLabel.text = "\(nachoChiliTotal)"
-        hotDogTotalLabel.text = "\(hotDogTotal)"
+        if nachoStackView.isHidden == true {
+            if hotDawgStackView.isHidden == false {
+                chicagoTotalLabel.text = "\(chicagoDogTotal)"
+                chiliTotalLabel.text = "\(chiliDogTotal)"
+                hotDogTotalLabel.text = "\(hotDogTotal)"
+            }
+        } else {
+            nachoTotalLabel.text = "\(nachoTotal)"
+            nachoChixTotalLabel.text = "\(nachoChixTotal)"
+            nachoChiliTotalLabel.text = "\(nachoChiliTotal)"
+        }
         
         totalCost = (chiliDogPrice * chiliDogTotal) + (chicagoDogPrice * chicagoDogTotal) + (hotDogTotal * hotDogPrice)
         totalCost += (nachoPrice * nachoTotal) + (nachoChixTotal * nachoChixPrice) + (nachoChiliTotal * nachoChiliPrice)
         totalCostLabel.text = "$\(totalCost).00"
+        order.total = totalCost
+        order.chicDog = chicagoDogTotal
+        order.chiliDog = chiliDogTotal
+        order.hotDog = hotDogTotal
+        order.nacho = nachoTotal
+        order.nachoChix = nachoChixTotal
+        order.nachoChili = nachoChiliTotal
     }
     
     override func viewDidLoad() {
+        nachoStackView.isHidden = true
+        hotDawgStackView.isHidden = true
         super.viewDidLoad()
         updateUI()
         // Do any additional setup after loading the view.

@@ -9,9 +9,37 @@ import UIKit
 
 class StadiumViewController: UIViewController {
 
+    @IBAction func submitButtonPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "VendorViewController", sender: nil)
+    }
+    @IBAction func switchButtonPressed(_ sender: UISwitch) {
+        switch sender{
+        case wrigleySwitch:
+            if wrigleySwitch.isOn{
+                greatSwitch.isEnabled = false
+                submitBtn.isEnabled = true
+            } else {
+                greatSwitch.isEnabled = true
+                submitBtn.isEnabled = false
+            }
+        case greatSwitch:
+            if greatSwitch.isOn{
+                wrigleySwitch.isEnabled = false
+                submitBtn.isEnabled = true
+            } else {
+                wrigleySwitch.isEnabled = true
+                submitBtn.isEnabled = false
+            }
+        default:
+            break
+        }
+    }
+    @IBOutlet weak var greatSwitch: UISwitch!
+    @IBOutlet weak var wrigleySwitch: UISwitch!
     @IBOutlet weak var submitBtn: UIButton!
-    @IBOutlet weak var stadiumChooseBtn: UIButton!
+
     override func viewDidLoad() {
+        submitBtn.isEnabled = false
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.

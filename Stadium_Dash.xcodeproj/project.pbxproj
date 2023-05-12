@@ -19,6 +19,8 @@
 		694FB4F72A0C194E00864A79 /* CheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694FB4F62A0C194E00864A79 /* CheckoutViewController.swift */; };
 		694FB4F92A0C196000864A79 /* StadiumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694FB4F82A0C196000864A79 /* StadiumViewController.swift */; };
 		694FB4FB2A0C196E00864A79 /* VendorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694FB4FA2A0C196E00864A79 /* VendorViewController.swift */; };
+		694FB4FD2A0DE1F500864A79 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694FB4FC2A0DE1F500864A79 /* Users.swift */; };
+		694FB4FF2A0DE6BE00864A79 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694FB4FE2A0DE6BE00864A79 /* Order.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		694FB4F62A0C194E00864A79 /* CheckoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewController.swift; sourceTree = "<group>"; };
 		694FB4F82A0C196000864A79 /* StadiumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StadiumViewController.swift; sourceTree = "<group>"; };
 		694FB4FA2A0C196E00864A79 /* VendorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorViewController.swift; sourceTree = "<group>"; };
+		694FB4FC2A0DE1F500864A79 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		694FB4FE2A0DE6BE00864A79 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,8 @@
 		690CCA9229F9A20C007625AD /* Stadium_Dash */ = {
 			isa = PBXGroup;
 			children = (
+				694FB4FC2A0DE1F500864A79 /* Users.swift */,
+				694FB4FE2A0DE6BE00864A79 /* Order.swift */,
 				690CCA9329F9A20C007625AD /* AppDelegate.swift */,
 				690CCA9529F9A20C007625AD /* SceneDelegate.swift */,
 				690CCA9729F9A20C007625AD /* ViewController.swift */,
@@ -269,10 +275,12 @@
 			files = (
 				694FB4FB2A0C196E00864A79 /* VendorViewController.swift in Sources */,
 				694FB4F72A0C194E00864A79 /* CheckoutViewController.swift in Sources */,
+				694FB4FF2A0DE6BE00864A79 /* Order.swift in Sources */,
 				690CCA9829F9A20C007625AD /* ViewController.swift in Sources */,
 				690CCA9429F9A20C007625AD /* AppDelegate.swift in Sources */,
 				690CCA9629F9A20C007625AD /* SceneDelegate.swift in Sources */,
 				694FB4F92A0C196000864A79 /* StadiumViewController.swift in Sources */,
+				694FB4FD2A0DE1F500864A79 /* Users.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
