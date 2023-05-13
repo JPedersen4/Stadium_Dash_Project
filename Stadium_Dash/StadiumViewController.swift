@@ -9,6 +9,10 @@ import UIKit
 
 class StadiumViewController: UIViewController {
     
+    @IBAction func backButtonPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    @IBOutlet weak var backButton: UIBarButtonItem!
     var currentUser: Users
     @IBSegueAction func goToOrder(_ coder: NSCoder) -> VendorViewController? {
         return VendorViewController(coder, currentUser: currentUser)

@@ -80,6 +80,10 @@ class VendorViewController: UIViewController {
     @IBOutlet weak var hotDawgzSwitch: UISwitch!
     @IBOutlet weak var vendorList: UIButton!
     
+    @IBAction func backButtonPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    @IBOutlet weak var backButton: UIBarButtonItem!
     @IBOutlet weak var totalCostLabel: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
     

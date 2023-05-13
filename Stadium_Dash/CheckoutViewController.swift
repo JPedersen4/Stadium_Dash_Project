@@ -9,6 +9,10 @@ import UIKit
 
 class CheckoutViewController: UIViewController {
     
+    @IBAction func backButtonPressed(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    @IBOutlet weak var backButton: UIBarButtonItem!
     @IBOutlet weak var savedPaymentStack: UIStackView!
     @IBAction func swithButtonPressed(_ sender: Any) {
         if savedPaymentSwitch.isOn == true{
@@ -112,6 +116,10 @@ class CheckoutViewController: UIViewController {
             else{
                 orderMessageLabel.isHidden = false
             }
+        }
+        func backAction(){
+            //print("Back Button Clicked")
+            dismiss(animated: true, completion: nil)
         }
     }
     

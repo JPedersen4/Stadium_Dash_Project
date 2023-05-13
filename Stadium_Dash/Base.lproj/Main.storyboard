@@ -88,7 +88,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="57.251908396946561" y="-2.1126760563380285"/>
+            <point key="canvasLocation" x="-873" y="-158"/>
         </scene>
         <!--Stadium View Controller-->
         <scene sceneID="ZOR-EQ-VTH">
@@ -156,6 +156,18 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IBw-hU-oee">
+                                <rect key="frame" x="5" y="15" width="383" height="44"/>
+                                <items>
+                                    <navigationItem id="WIA-hK-SJL">
+                                        <barButtonItem key="leftBarButtonItem" title="&lt; Back" id="Z4G-kS-sXm">
+                                            <connections>
+                                                <action selector="backButtonPressed:" destination="v0B-eZ-lQV" id="nRJ-eV-VL0"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wJ6-OI-DWM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -165,12 +177,15 @@
                             <constraint firstItem="IbW-sg-wPG" firstAttribute="centerY" secondItem="9G3-3Z-ohI" secondAttribute="centerY" id="DLE-Fd-4N2"/>
                             <constraint firstItem="hWa-Qh-LqK" firstAttribute="centerY" secondItem="9G3-3Z-ohI" secondAttribute="centerY" id="EV6-6L-sul"/>
                             <constraint firstItem="wJ6-OI-DWM" firstAttribute="trailing" secondItem="hWa-Qh-LqK" secondAttribute="trailing" constant="20" id="NkM-Li-c7i"/>
+                            <constraint firstItem="IBw-hU-oee" firstAttribute="leading" secondItem="9G3-3Z-ohI" secondAttribute="leading" constant="5" id="UvT-c6-KbL"/>
                             <constraint firstItem="wJ6-OI-DWM" firstAttribute="trailing" secondItem="IbW-sg-wPG" secondAttribute="trailing" constant="20" id="Y86-KM-cUu"/>
                             <constraint firstItem="IbW-sg-wPG" firstAttribute="leading" secondItem="wJ6-OI-DWM" secondAttribute="leading" constant="20" id="r5D-Xd-rtj"/>
+                            <constraint firstAttribute="trailing" secondItem="IBw-hU-oee" secondAttribute="trailing" constant="5" id="whO-c7-Ree"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="fVd-fD-8da"/>
                     <connections>
+                        <outlet property="backButton" destination="Z4G-kS-sXm" id="TKB-96-Zdo"/>
                         <outlet property="greatSwitch" destination="1fN-ur-drh" id="frF-5H-Ldn"/>
                         <outlet property="submitBtn" destination="bv4-0w-Z9A" id="c4R-1Q-txe"/>
                         <outlet property="wrigleySwitch" destination="2pL-VG-CqI" id="Pkc-Cc-tsI"/>
@@ -428,7 +443,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2mi-SN-jhU">
-                                <rect key="frame" x="20" y="94" width="353" height="104"/>
+                                <rect key="frame" x="20" y="159" width="353" height="104"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a Vendor:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sam-a4-VA0">
                                         <rect key="frame" x="0.0" y="0.0" width="353" height="42"/>
@@ -472,6 +487,18 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w27-lA-Do6">
+                                <rect key="frame" x="5" y="15" width="383" height="44"/>
+                                <items>
+                                    <navigationItem id="ZJc-Qy-No9">
+                                        <barButtonItem key="leftBarButtonItem" title="&lt; Back" id="MNc-FD-VsS">
+                                            <connections>
+                                                <action selector="backButtonPressed:" destination="XxR-uD-9Is" id="qeX-ta-n44"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qHA-55-Qzv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -479,7 +506,8 @@
                             <constraint firstItem="Xti-9Y-jJ9" firstAttribute="leading" secondItem="qHA-55-Qzv" secondAttribute="leading" constant="20" id="2AR-8b-xXa"/>
                             <constraint firstItem="qHA-55-Qzv" firstAttribute="trailing" secondItem="Xti-9Y-jJ9" secondAttribute="trailing" constant="20" id="7Ek-37-rbG"/>
                             <constraint firstItem="fQZ-S5-D8q" firstAttribute="leading" secondItem="qHA-55-Qzv" secondAttribute="leading" constant="20" id="8Hr-nm-GdN"/>
-                            <constraint firstItem="2mi-SN-jhU" firstAttribute="top" secondItem="qHA-55-Qzv" secondAttribute="top" constant="35" id="Ept-Wv-TmL"/>
+                            <constraint firstAttribute="trailing" secondItem="w27-lA-Do6" secondAttribute="trailing" constant="5" id="CSb-Ac-PVk"/>
+                            <constraint firstItem="2mi-SN-jhU" firstAttribute="top" secondItem="qHA-55-Qzv" secondAttribute="top" constant="100" id="Ept-Wv-TmL"/>
                             <constraint firstItem="2mi-SN-jhU" firstAttribute="leading" secondItem="qHA-55-Qzv" secondAttribute="leading" constant="20" id="GUH-p6-bmj"/>
                             <constraint firstItem="Xti-9Y-jJ9" firstAttribute="centerY" secondItem="skv-in-YpD" secondAttribute="centerY" id="Hf7-0F-BgB"/>
                             <constraint firstItem="g9t-Wu-ATk" firstAttribute="leading" secondItem="qHA-55-Qzv" secondAttribute="leading" constant="20" id="K6S-DZ-zSf"/>
@@ -489,6 +517,7 @@
                             <constraint firstItem="qHA-55-Qzv" firstAttribute="trailing" secondItem="fQZ-S5-D8q" secondAttribute="trailing" constant="20" id="fCB-Gg-AEt"/>
                             <constraint firstItem="qHA-55-Qzv" firstAttribute="trailing" secondItem="noC-oO-gQE" secondAttribute="trailing" constant="35" id="lwg-ak-1PW"/>
                             <constraint firstItem="Xti-9Y-jJ9" firstAttribute="centerY" secondItem="skv-in-YpD" secondAttribute="centerY" id="mR0-7b-Hei"/>
+                            <constraint firstItem="w27-lA-Do6" firstAttribute="leading" secondItem="skv-in-YpD" secondAttribute="leading" constant="5" id="nys-4o-LIs"/>
                             <constraint firstItem="qHA-55-Qzv" firstAttribute="trailing" secondItem="2mi-SN-jhU" secondAttribute="trailing" constant="20" id="pdK-Zb-uTT"/>
                             <constraint firstItem="noC-oO-gQE" firstAttribute="top" secondItem="g9t-Wu-ATk" secondAttribute="bottom" constant="65" id="qXP-IZ-lWM"/>
                             <constraint firstItem="noC-oO-gQE" firstAttribute="leading" secondItem="qHA-55-Qzv" secondAttribute="leading" constant="35" id="ylS-3k-Dn0"/>
@@ -496,6 +525,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="biT-V7-fM8"/>
                     <connections>
+                        <outlet property="backButton" destination="MNc-FD-VsS" id="Tiv-uO-qLT"/>
                         <outlet property="checkoutButton" destination="NJR-Mb-b5Q" id="VTN-Yo-ibe"/>
                         <outlet property="chicagoAddBtn" destination="bVq-Fd-MJM" id="Y0O-0o-aUb"/>
                         <outlet property="chicagoDeleteBtn" destination="55z-3U-Qms" id="B8D-MK-HcC"/>
@@ -554,7 +584,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Umg-U8-Pr7">
-                                <rect key="frame" x="20" y="291.33333333333331" width="353" height="133"/>
+                                <rect key="frame" x="20" y="371.33333333333331" width="353" height="133"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g80-DF-Ibo">
                                         <rect key="frame" x="0.0" y="0.0" width="353" height="31"/>
@@ -624,7 +654,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="GLb-Be-UJJ">
-                                <rect key="frame" x="20" y="79.000000000000014" width="353" height="142.33333333333337"/>
+                                <rect key="frame" x="20" y="159" width="353" height="142.33333333333337"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wxi-8I-G2v">
                                         <rect key="frame" x="0.0" y="0.0" width="353" height="20.333333333333332"/>
@@ -655,7 +685,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wwk-8p-qwW">
-                                        <rect key="frame" x="0.0" y="20.333333333333329" width="353" height="20.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="20.333333333333343" width="353" height="20.333333333333329"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Chili Dogs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O7Q-og-54V">
                                                 <rect key="frame" x="0.0" y="0.0" width="77" height="20.333333333333332"/>
@@ -682,7 +712,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LSM-o7-Jte">
-                                        <rect key="frame" x="0.0" y="40.666666666666671" width="353" height="20.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="40.666666666666657" width="353" height="20.333333333333329"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Chicago Dogs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YU2-RT-uYU">
                                                 <rect key="frame" x="0.0" y="0.0" width="107" height="20.333333333333332"/>
@@ -763,16 +793,16 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2pq-8C-RCR">
-                                        <rect key="frame" x="0.0" y="101.66666666666666" width="353" height="20.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="101.66666666666669" width="353" height="20.333333333333329"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Nachos W/ Chili" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JPe-XI-VrT">
-                                                <rect key="frame" x="0.0" y="0.0" width="228.66666666666666" height="20.333333333333332"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="119" height="20.333333333333332"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Quantity:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B6A-ag-aL8">
-                                                <rect key="frame" x="228.66666666666666" y="0.0" width="69.333333333333343" height="20.333333333333332"/>
+                                                <rect key="frame" x="119" y="0.0" width="179" height="20.333333333333332"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -817,12 +847,26 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9ah-Hu-5kF">
+                                <rect key="frame" x="5" y="15" width="383" height="44"/>
+                                <items>
+                                    <navigationItem title="Checkout" id="uSZ-1C-ztX">
+                                        <barButtonItem key="leftBarButtonItem" title="&lt; Back" id="acc-nR-MTv">
+                                            <connections>
+                                                <action selector="backButtonPressed:" destination="rEv-Ii-ER8" id="xiP-gi-9Jo"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="AQ4-5a-fzR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="GLb-Be-UJJ" firstAttribute="leading" secondItem="AQ4-5a-fzR" secondAttribute="leading" constant="20" id="2VS-s7-CR3"/>
+                            <constraint firstAttribute="trailing" secondItem="9ah-Hu-5kF" secondAttribute="trailing" constant="5" id="2lo-ll-W8O"/>
                             <constraint firstItem="seK-Yd-4N6" firstAttribute="leading" secondItem="AQ4-5a-fzR" secondAttribute="leading" constant="20" id="7V3-5x-Dzc"/>
+                            <constraint firstItem="9ah-Hu-5kF" firstAttribute="leading" secondItem="7cM-kO-u3C" secondAttribute="leading" constant="5" id="8zI-kC-pb2"/>
                             <constraint firstItem="AQ4-5a-fzR" firstAttribute="trailing" secondItem="Umg-U8-Pr7" secondAttribute="trailing" constant="20" id="AN5-CD-GGa"/>
                             <constraint firstItem="Umg-U8-Pr7" firstAttribute="top" secondItem="GLb-Be-UJJ" secondAttribute="bottom" constant="70" id="Loj-l1-o7u"/>
                             <constraint firstItem="g6o-DX-Sgw" firstAttribute="leading" secondItem="AQ4-5a-fzR" secondAttribute="leading" constant="34" id="RS8-FD-5RL"/>
@@ -831,12 +875,13 @@
                             <constraint firstItem="AQ4-5a-fzR" firstAttribute="trailing" secondItem="seK-Yd-4N6" secondAttribute="trailing" constant="20" id="leL-5e-z45"/>
                             <constraint firstItem="AQ4-5a-fzR" firstAttribute="trailing" secondItem="g6o-DX-Sgw" secondAttribute="trailing" constant="34" id="nSh-yw-1JA"/>
                             <constraint firstItem="AQ4-5a-fzR" firstAttribute="trailing" secondItem="GLb-Be-UJJ" secondAttribute="trailing" constant="20" id="pE1-fp-sDX"/>
-                            <constraint firstItem="GLb-Be-UJJ" firstAttribute="top" secondItem="AQ4-5a-fzR" secondAttribute="top" constant="20" id="wLE-ZU-E2E"/>
+                            <constraint firstItem="GLb-Be-UJJ" firstAttribute="top" secondItem="AQ4-5a-fzR" secondAttribute="top" constant="100" id="wLE-ZU-E2E"/>
                             <constraint firstAttribute="bottomMargin" secondItem="g6o-DX-Sgw" secondAttribute="bottom" constant="20" id="x3w-f0-ZZV"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="WRD-tx-3D7"/>
                     <connections>
+                        <outlet property="backButton" destination="acc-nR-MTv" id="PWL-My-kcR"/>
                         <outlet property="cardTextField" destination="Rca-Fn-tJO" id="JPd-WV-y0j"/>
                         <outlet property="ccvTextField" destination="YPn-uS-SQQ" id="d9X-5v-tsx"/>
                         <outlet property="chicDogQuantityLabel" destination="S72-5e-fJC" id="Rxm-lj-cVA"/>
