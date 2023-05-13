@@ -8,7 +8,21 @@
 import UIKit
 
 class StadiumViewController: UIViewController {
-
+    
+    var currentUser: Users
+    @IBSegueAction func goToOrder(_ coder: NSCoder) -> VendorViewController? {
+        return VendorViewController(coder, currentUser: currentUser)
+    }
+    
+    init?(coder: NSCoder, currentUser: Users) {
+        self.currentUser = currentUser
+        super.init(coder: coder)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     @IBAction func submitButtonPressed(_ sender: UIButton) {
         performSegue(withIdentifier: "VendorViewController", sender: nil)
     }
@@ -40,6 +54,8 @@ class StadiumViewController: UIViewController {
 
     override func viewDidLoad() {
         submitBtn.isEnabled = false
+        greatSwitch.isOn = false
+        wrigleySwitch.isOn = false
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.

@@ -9,6 +9,17 @@ import UIKit
 
 class VendorViewController: UIViewController {
     
+    var currentUser: Users
+    
+    init?(_ coder: NSCoder, currentUser: Users) {
+        self.currentUser = currentUser
+        super.init(coder: coder)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     var order: CurrentOrder = CurrentOrder(total: 0, chiliDog: 0, chicDog: 0, hotDog: 0, nacho: 0, nachoChili: 0, nachoChix: 0)
     
 
@@ -72,10 +83,13 @@ class VendorViewController: UIViewController {
     @IBOutlet weak var totalCostLabel: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
     
+    @IBSegueAction func checkout(_ coder: NSCoder) -> CheckoutViewController? {
+        return CheckoutViewController(coder: coder, totalCost: order, user: currentUser)
+    }
     @IBOutlet weak var nachoStackView: UIStackView!
     @IBAction func checkoutButtonPressed(_ sender: UIButton) {
         if totalCost > 0{
-            performSegue(withIdentifier: "CheckoutViewController", sender: totalCost)
+            performSegue(withIdentifier: "CheckoutViewController", sender: nil)
         }
     }
     
@@ -190,6 +204,8 @@ class VendorViewController: UIViewController {
     override func viewDidLoad() {
         nachoStackView.isHidden = true
         hotDawgStackView.isHidden = true
+        hotDawgzSwitch.isOn = false
+        nachoSwitch.isOn = false
         super.viewDidLoad()
         updateUI()
         // Do any additional setup after loading the view.

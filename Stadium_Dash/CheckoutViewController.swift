@@ -9,6 +9,7 @@ import UIKit
 
 class CheckoutViewController: UIViewController {
     
+    @IBOutlet weak var savedPaymentStack: UIStackView!
     @IBAction func swithButtonPressed(_ sender: Any) {
         if savedPaymentSwitch.isOn == true{
             ccvTextField.isEnabled = false
@@ -21,9 +22,16 @@ class CheckoutViewController: UIViewController {
             cardTextField.isEnabled = true
         }
     }
+    @IBOutlet weak var nachoChiliQuantityLabel: UILabel!
+    @IBOutlet weak var nachoQuantityLabel: UILabel!
+    @IBOutlet weak var nachoChixQuantityLabel: UILabel!
     @IBOutlet weak var savedPaymentSwitch: UISwitch!
+    @IBOutlet weak var chicDogQuantityLabel: UILabel!
     @IBOutlet weak var ccvTextField: UITextField!
+    @IBOutlet weak var hotDogQuantityLabel: UILabel!
+    @IBOutlet weak var chiliDogQuantityLabel: UILabel!
     @IBOutlet weak var expirationTextField: UITextField!
+    @IBOutlet weak var totalCostLabel: UILabel!
     @IBOutlet weak var cardTextField: UITextField!
     @IBOutlet weak var orderMessageLabel: UILabel!
     @IBOutlet weak var chiliNachoStackView: UIStackView!
@@ -36,9 +44,14 @@ class CheckoutViewController: UIViewController {
         if savedPaymentSwitch.isOn == true{
             countOrder = 1
             orderMessageLabel.text = "Payment accepted, order for \(user.userName) will be delivered shortly!"
+            updateUI()
         }
         if cardTextField.isEnabled == true{
-            
+            if (cardTextField.text?.isEmpty == false && expirationTextField.text?.isEmpty == false && ccvTextField.text?.isEmpty == false){
+                countOrder = 1
+                orderMessageLabel.text = "Payment accepted, order for \(user.userName) will be delivered shortly!"
+                updateUI()
+            }
         }
     }
     @IBOutlet weak var submitOrderButton: UIButton!
@@ -58,11 +71,22 @@ class CheckoutViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        savedPaymentSwitch.isOn = false
+        hotDogQuantityLabel.text = "\(totalCost.hotDog)"
+        chiliDogQuantityLabel.text = "\(totalCost.chiliDog)"
+        chicDogQuantityLabel.text = "\(totalCost.chicDog)"
+        nachoQuantityLabel.text = "\(totalCost.nacho)"
+        nachoChiliQuantityLabel.text = "\(totalCost.nachoChili)"
+        nachoChixQuantityLabel.text = "\(totalCost.nachoChix)"
+        totalCostLabel.text = "$\(totalCost.total).00"
         updateUI()
         // Do any additional setup after loading the view.
     }
     
     func updateUI() {
+        if user.userName == "Guest" {
+            savedPaymentStack.isHidden = true
+        }
         if totalCost.nacho <= 0{
             nachoStackView.isHidden = true
         }
